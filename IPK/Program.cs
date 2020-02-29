@@ -1,4 +1,6 @@
-﻿using HackerRank.IPK.WarmUp.Exercises;
+﻿using HackerRank.IPK.DictionariesAndHashmaps.Exercises;
+using HackerRank.IPK.Strings.Exercises;
+using HackerRank.IPK.WarmUp.Exercises;
 using Microsoft.Extensions.DependencyInjection;
 
 
@@ -11,7 +13,7 @@ namespace HackerRank.IPK
         {
             //setup our DI
             var serviceProvider = new ServiceCollection()
-                .AddSingleton<IExercise, RepeatedString>()
+                .AddSingleton<IExercise, MakingAnagrams>()
                 .BuildServiceProvider();
             var exercise = serviceProvider.GetRequiredService<IExercise>();
 
