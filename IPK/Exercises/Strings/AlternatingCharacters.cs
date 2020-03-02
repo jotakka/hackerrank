@@ -15,24 +15,21 @@ using System;
 
 namespace HackerRank.IPK.Strings.Exercises
 {
-    class MakingAnagrams : IExercise
+    class AlternatingCharacters : IExercise
     {
         // Complete the makeAnagram function below.
-        static int makeAnagram(string str1, string str2)
+        static int alternatingCharacters(string str)
         {
-            var letterArray = new int[27];
-            foreach (var c in str1)
+            var toDeleteCount = 0;
+            for (var i = 0; i < str.Length - 1; i++)
             {
-                letterArray[c - 'a']++;
+                if (str[i] == str[i + 1])
+                {
+                    toDeleteCount++;
+                }
             }
-            foreach (var c in str2)
-            {
-                letterArray[c - 'a']--;
-            }
-
-            return letterArray.Sum(e => Math.Abs(e));
+            return toDeleteCount;
         }
-
 
 
         public void Run()
@@ -40,15 +37,19 @@ namespace HackerRank.IPK.Strings.Exercises
             TextWriter textWriter =
                 new StreamWriter("./rank", true);
 
-            string a = "fcrxzwscanmligyxyvym"; //Console.ReadLine();
+            int q = Convert.ToInt32(Console.ReadLine());
 
-            string b = "jxwtrhvujlmrpdoqbisbwhmgpmeoke";//Console.ReadLine();
+            for (int qItr = 0; qItr < q; qItr++)
+            {
+                string s = Console.ReadLine();
 
-            int res = makeAnagram(a, b);
+                int result = alternatingCharacters(s);
 
-            textWriter.WriteLine(res);
+                textWriter.WriteLine(result);
+            }
 
             textWriter.Flush();
+            textWriter.Close();
             textWriter.Close();
         }
     }

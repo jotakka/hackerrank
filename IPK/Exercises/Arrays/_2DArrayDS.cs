@@ -15,8 +15,9 @@ using System.Threading.Tasks;
 
 namespace HackerRank.IPK.Arrays.Exercises
 {
-    class NewYearChaos : IExercise
+    class _2DArrayDS : IExercise
     {
+
         // Complete the hourglassSum function below.
         static int hourglassSum(int[][] arr)
         {
