@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace HackerRank.IPK.Arrays.Exercises
 {
-    class _2DArrayDS : IExercise
+    class FibonacciNumbers : IExercise
     {
 
         // Complete the hourglassSum function below.
