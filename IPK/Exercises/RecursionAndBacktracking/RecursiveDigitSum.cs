@@ -28,11 +28,11 @@ namespace HackerRank.IPK.RecursionAndBacktracking.Exercises
 
 
         //this implementation takes too long and probably causes stack overflow for very huge numbers
-        static int superDigitTakeToLong(string n, int k)
+        static int superDigit(string n, int k)
             {
                 if (n.Length == 1) return int.Parse(n);
                 var newSum =k*n.Sum(i=>int.Parse($"{i}"));
-                return superDigitTakeToLong($"{newSum}", 1);
+                return superDigit($"{newSum}", 1);
             }
 
 
