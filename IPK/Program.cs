@@ -1,5 +1,6 @@
 ﻿using HackerRank.IPK.Arrays.Exercises;
 using HackerRank.IPK.DictionariesAndHashmaps.Exercises;
+using HackerRank.IPK.DynamicProgramming.Exercises;
 using HackerRank.IPK.Miscelanious.Exercises;
 using HackerRank.IPK.RecursionAndBacktracking.Exercises;
 using HackerRank.IPK.Strings.Exercises;
@@ -16,7 +17,7 @@ namespace HackerRank.IPK
         {
             //setup our DI
             var serviceProvider = new ServiceCollection()
-                .AddSingleton<IExercise, TimeComplexityPrimality>()
+                .AddSingleton<IExercise, Candies>()
                 .BuildServiceProvider();
             var exercise = serviceProvider.GetRequiredService<IExercise>();
 
