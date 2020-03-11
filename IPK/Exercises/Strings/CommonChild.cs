@@ -17,8 +17,24 @@ namespace HackerRank.IPK.Strings.Exercises
 {
     class CommonChild : IExercise
     {
-        // Complete the commonChild function below.
         static int commonChild(string str1, string str2)
+        {
+            var dynArray = new int[str1.Length+1, str2.Length+1];
+
+            for (int i = 1; i < str1.Length+1; i++)
+            {
+                for (int j = 1; j < str2.Length+1; j++)
+                {
+                    if( xx)
+                }
+            }
+
+
+
+        }
+
+            // Complete the commonChild function below.
+            static int commonChildNotWorking(string str1, string str2)
         {
             var maxCommonChildLeght = 0;
             var oldMaxCCL=int.MinValue;
