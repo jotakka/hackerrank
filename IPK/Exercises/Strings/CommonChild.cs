@@ -25,12 +25,12 @@ namespace HackerRank.IPK.Strings.Exercises
             {
                 for (int j = 1; j < str2.Length+1; j++)
                 {
-                    if( xx)
+                   // if( xx)
                 }
             }
 
 
-
+			return 0;
         }
 
             // Complete the commonChild function below.
