@@ -20,7 +20,7 @@ namespace HackerRank.IPK.DynamicProgramming.Exercises
 
 		// Complete the candies function below.
 		// Complete the candies function below.
-		static long candies(int n, int[] arr) {
+		static long candies(int n, long[] arr) {
 			var candies = new long[n];
 			candies[0] = 1;
 			var sum = candies[0];

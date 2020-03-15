@@ -20,16 +20,23 @@ namespace HackerRank.IPK.Strings.Exercises
         // Complete the isValid function below.
         static string isValid(string str)
         {
-            var distinctChars = str.Distinct().Count();
+            var distinctCounts = str.OrderBy(c => c)
+                .GroupBy(c => c).Select(c => c.Count() 
+                ).GroupBy(n => n)
+                .Select(n => new { Count = n.Count(), N = n.Key }).OrderByDescending(n => n.Count).ToArray();
 
-            if(  (str.Length)%distinctChars > 1)
-            {
-                return "NO";
-            }
-            else
+            if(distinctCounts.Count() == 1 || distinctCounts[1].N == 1 || distinctCounts[1].N == distinctCounts[0].N + 1)
             {
                 return "YES";
             }
+
+            if( distinctCounts.Count() > 2 || distinctCounts[1].Count > 1)
+            {
+                return "NO";
+            }
+
+            return "NO";
+
         }
 
         public void Run()

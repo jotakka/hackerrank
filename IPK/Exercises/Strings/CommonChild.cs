@@ -19,25 +19,30 @@ namespace HackerRank.IPK.Strings.Exercises
     {
         static int commonChild(string str1, string str2)
         {
-            var dynArray = new int[str1.Length+1, str2.Length+1];
+            var dynArray = new int[str1.Length + 1, str2.Length + 1];
 
-            for (int i = 1; i < str1.Length+1; i++)
+            for (int i = 1; i < str1.Length + 1; i++)
             {
-                for (int j = 1; j < str2.Length+1; j++)
+                for (int j = 1; j < str2.Length + 1; j++)
                 {
-                   // if( xx)
+
+                    if (str1[i - 1] == str2[j - 1])
+                    {
+                        dynArray[i, j] = dynArray[i - 1, j - 1] + 1;
+                    }
+                    else
+                        dynArray[i, j] = Math.Max(dynArray[i, j - 1], dynArray[i - 1, j]);
                 }
             }
 
-
-			return 0;
+            return dynArray[str1.Length, str2.Length];
         }
 
-            // Complete the commonChild function below.
-            static int commonChildNotWorking(string str1, string str2)
+        // Complete the commonChild function below.
+        static int commonChildNotWorking(string str1, string str2)
         {
             var maxCommonChildLeght = 0;
-            var oldMaxCCL=int.MinValue;
+            var oldMaxCCL = int.MinValue;
             var str2Idx = 0;
             var str2AsHashSet = str2.ToHashSet();
             for (int i = 0; i < str1.Length; i++)
@@ -46,7 +51,7 @@ namespace HackerRank.IPK.Strings.Exercises
                 {
                     maxCommonChildLeght++;
                     str2Idx = str2.IndexOf(str1[i]);
-                    if(str2Idx == str2.Length - 1)
+                    if (str2Idx == str2.Length - 1)
                     {
                         break;
                     }
